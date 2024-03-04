@@ -76,8 +76,20 @@ function removeProperties(inputObject, inputKeys) {
  *    compareObjects({a: 1, b: 2}, {a: 1, b: 2}) => true
  *    compareObjects({a: 1, b: 2}, {a: 1, b: 3}) => false
  */
-function compareObjects(/* obj1, obj2 */) {
-  throw new Error('Not implemented');
+function compareObjects(inputObject1, inputObject2) {
+  const keys1 = Object.keys(inputObject1);
+  const keys2 = Object.keys(inputObject2);
+  let result = true;
+
+  if (keys1.length !== keys2.length) {
+    result = false;
+  }
+  keys1.forEach((key) => {
+    if (inputObject1[key] !== inputObject2[key]) {
+      result = false;
+    }
+  });
+  return result;
 }
 
 /**
