@@ -103,8 +103,8 @@ function compareObjects(inputObject1, inputObject2) {
  *    isEmptyObject({}) => true
  *    isEmptyObject({a: 1}) => false
  */
-function isEmptyObject(/* obj */) {
-  throw new Error('Not implemented');
+function isEmptyObject(obj) {
+  return !Object.keys(obj).length;
 }
 
 /**
